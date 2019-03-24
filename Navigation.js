@@ -3,6 +3,7 @@ import { Text, View } from 'react-native';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import Main from './Main'
 import CompletedScreen from './CompletedScreen'
+import * as Icons from '@expo/vector-icons';
 
 const TabNavigator = createBottomTabNavigator(
     {
@@ -15,16 +16,19 @@ const TabNavigator = createBottomTabNavigator(
                 const { routeName } = navigation.state;
                 let iconName;
                 if (routeName === 'Haiku') {
-                    iconName = '📜'
+                    iconName = <Icons.SimpleLineIcons name="book-open" size={22} />
                 } else if (routeName === 'Completed') {
-                    iconName = `✔️`;
+                    iconName = <Icons.FontAwesome name="check-square" size={22} />
                 }
-                return <Text style={{fontSize: 25}}>{iconName}</Text>;
+                return iconName
             },
         }),
         tabBarOptions: {
-            activeTintColor: 'tomato',
+            activeTintColor: 'red',
             inactiveTintColor: 'grey',
+            labelStyle: {
+                fontSize: 13,
+            },
         },
     }
 );
