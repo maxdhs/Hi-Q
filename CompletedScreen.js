@@ -4,10 +4,15 @@ import { Constants } from 'expo';
 
 export default class CompletedScreen extends React.Component {
     render() {
-        console.log(this.props.screenProps.haiku)
+        let haikus = this.props.screenProps.haiku
+        let keys = Object.keys(haikus)
+        const list = []
+        for( let key of keys) {
+            list.push(<Text key={key}>{haikus[key].name}: {haikus[key].isCompleted? 'done' : 'incomplete'}</Text>)
+        }
         return (
             <View style={styles.container}>
-                <Text>List coming!</Text>
+                {list}
             </View>
         )
     }

@@ -3,7 +3,7 @@ import { Text, View, StyleSheet, TouchableOpacity } from 'react-native'
 
 export default Header = (props) => (
     <View >
-        <Text style={styles.text}>Haiku {props.selectedHaiku + 1} of 330: '{props.haiku[props.selectedHaiku].name}'</Text>
+        <Text style={styles.text}>Haiku <Text style={styles.bold}>{props.selectedHaiku + 1}</Text> of <Text style={styles.bold}>330</Text>: <Text style={styles.italic}>{props.haiku[props.selectedHaiku].name}</Text></Text>
         <Text style={styles.emoji}>{props.haiku[props.selectedHaiku].emoji}</Text>
     </View>
 )
@@ -22,5 +22,11 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         padding: 10,
         marginBottom: 50
+    },
+    bold: {
+        fontWeight: '900',
+    },
+    italic: {
+        fontStyle: 'italic'
     }
 })
