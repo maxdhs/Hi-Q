@@ -1,17 +1,19 @@
 import React from 'react'
-import { StyleSheet, View, TouchableOpacity} from 'react-native'
+import { StyleSheet, View, TouchableOpacity } from 'react-native'
 import ChoiceList from './ChoiceList'
 import Haiku from './Haiku'
-import Header from './Header'
+import HeaderTitle from './HeaderTitle'
+import HeaderEmoji from './HeaderEmoji'
 
 export default class Main extends React.Component {
- 
+
   render() {
     return (
       <View style={styles.container}>
-      
-        <TouchableOpacity onPress={this.props.screenProps.handlePress}>
-          <Header {...this.props.screenProps}/>
+        <HeaderTitle {...this.props.screenProps}/>
+        <TouchableOpacity
+          onPress={this.props.screenProps.handlePress}>
+          <HeaderEmoji {...this.props.screenProps} />
         </TouchableOpacity>
         <Haiku
           haikuLines={this.props.screenProps.haiku[this.props.screenProps.selectedHaiku].haikuLines}
@@ -31,11 +33,10 @@ export default class Main extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: '#FFFFFF',
     justifyContent: 'center',
     alignItems: 'center',
-    borderWidth: 5,
-    borderColor: 'grey'
+    paddingBottom: 40
   },
   text: {
     color: 'green',

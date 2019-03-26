@@ -35,7 +35,7 @@ export default class App extends React.Component {
       const value = await AsyncStorage.getItem('savedState');
       if (value !== null) {
         let savedState = JSON.parse(value)
-        this.setState(savedState)
+        // this.setState(savedState)
       }
     } catch (error) {
      console.log(error)
