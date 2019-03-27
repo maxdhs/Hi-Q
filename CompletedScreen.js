@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, View, ScrollView, Text } from 'react-native'
 import { Constants } from 'expo';
+import CompletedTitle from './CompletedTitle'
 
 export default class CompletedScreen extends React.Component {
     render() {
@@ -11,24 +12,29 @@ export default class CompletedScreen extends React.Component {
             list.push(
                 <View key={key}>
                     <View style={styles.rowContainer} >
-                        <Text style={styles.emoji}>
-                            {haikus[key].emoji}
-                        </Text>
-                        <Text style={styles.title}>
-                            {haikus[key].name} {'\n'}
-                            <Text style={styles.caption}>
-                                Haiku {Number(key) + 1} of {keys.length}
+                        <View style={styles.subContainer}>
+                            <Text style={styles.emoji}>
+                                {haikus[key].emoji}
                             </Text>
-                        </Text>
+                            <Text style={styles.title}>
+                                {haikus[key].name} {'\n'}
+                                <Text style={styles.caption}>
+                                    Haiku {Number(key) + 1} of {keys.length}
+                                </Text>
+                            </Text>
+                        </View>
                         <Text style={styles.checkbox}>
-                            {haikus[key].isCompleted? '✔️': null }️
+                            {haikus[key].isCompleted ? '✅' : null}️
                         </Text>
                     </View>
                 </View>
             )
         }
         return (
-            <View style={styles.container}>{list}</View>
+            <View style={styles.container}>
+                <CompletedTitle />
+                {list}
+            </View>
         )
     }
 }
@@ -37,21 +43,20 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingTop: Constants.statusBarHeight,
-        backgroundColor: 'darkgrey'
+    },
+    subContainer: {
+        flexDirection: 'row'
     },
     rowContainer: {
         flexDirection: 'row',
-        borderColor: 'lightgrey',
-        borderBottomWidth: StyleSheet.hairlineWidth
+        borderBottomWidth: StyleSheet.hairlineWidth,
+        justifyContent: 'space-between'
     },
     checkbox: {
-        position: 'absolute',
-        left: 350,
-        fontSize: 30,
-        color: 'green'
+        fontSize: 50,
     },
     emoji: {
-        fontSize: 25,
+        fontSize: 30,
         backgroundColor: 'black',
         padding: 10,
         margin: 10,
@@ -60,9 +65,9 @@ const styles = StyleSheet.create({
     title: {
         paddingTop: 5,
         fontSize: 30,
-        color: 'white',
     },
     caption: {
-        fontSize: 15,
+        fontSize: 20,
+        fontFamily: 'sans-serif-thin'
     }
 })

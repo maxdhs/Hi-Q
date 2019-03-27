@@ -1,10 +1,10 @@
 {
   "webpackServerPort": null,
-  "expoServerNgrokUrl": "https://j6-cx4.anonymous.hi-q.exp.direct",
-  "packagerNgrokUrl": "https://packager.j6-cx4.anonymous.hi-q.exp.direct",
-  "ngrokPid": 12564,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 400
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null
 }

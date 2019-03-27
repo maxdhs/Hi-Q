@@ -4,6 +4,7 @@ import ChoiceList from './ChoiceList'
 import Haiku from './Haiku'
 import HeaderTitle from './HeaderTitle'
 import HeaderEmoji from './HeaderEmoji'
+import Translation from './Translation'
 
 export default class Main extends React.Component {
 
@@ -15,15 +16,10 @@ export default class Main extends React.Component {
           onPress={this.props.screenProps.handlePress}>
           <HeaderEmoji {...this.props.screenProps} />
         </TouchableOpacity>
-        <Haiku
+        <Haiku {...this.props.screenProps}
           haikuLines={this.props.screenProps.haiku[this.props.screenProps.selectedHaiku].haikuLines}
-          selectedLine={this.props.screenProps.selectedLine}
-          selectedHaiku={this.props.screenProps.selectedHaiku}
         />
-        <ChoiceList
-          haiku={this.props.screenProps.haiku[this.props.screenProps.selectedHaiku]}
-          selectedLine={this.props.screenProps.selectedLine}
-          checkCorrect={this.props.screenProps.checkCorrect}
+        <Translation {...this.props.screenProps}
         />
       </View>
     );
@@ -34,7 +30,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#FFFFFF',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
     alignItems: 'center',
     paddingBottom: 40
   },
