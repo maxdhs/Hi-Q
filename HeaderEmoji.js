@@ -1,23 +1,28 @@
 import React from 'react'
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native'
-import { Constants } from 'expo'
 
-export default HeaderTitle = (props) => (
-        <Text
-            style={styles.emoji}>
-            {props.haiku[props.selectedHaiku].emoji}
-        </Text>
+export default HeaderEmoji = (props) => (
+    <View style={styles.container}>
+        <TouchableOpacity  onPress={props.handlePress}>
+            <Text
+                style={styles.emoji}>
+                {props.haiku[props.selectedHaiku].emoji}
+            </Text>
+        </TouchableOpacity>
+    </View>
 )
 
 const styles = StyleSheet.create({
-    emoji: {
-        width: 520,
-        textAlign: 'center',
-        fontSize: 100,
+    container: {
+        width: '95%',
+        alignItems: 'center',
         backgroundColor: 'black',
         padding: 10,
         borderRadius: 10,
         borderColor: 'darkgrey',
         borderWidth: StyleSheet.hairlineWidth,
+    },
+    emoji: {
+        fontSize: 100,
     }
 })

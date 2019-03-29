@@ -11,11 +11,11 @@ export default Haiku = (props) => (
 )
 
 const styles = StyleSheet.create({
-  container: {
-      alignSelf: 'stretch',
-      marginHorizontal: 10,
-      borderColor: '#FFFFFF',
-      borderWidth: StyleSheet.hairlineWidth,
-   
-  }
+    container: {
+        width: '95%',
+        borderColor: '#FFFFFF',
+        borderWidth: StyleSheet.hairlineWidth,
+        backgroundColor: 'darkgrey',
+        borderRadius: 10
+    }
 })

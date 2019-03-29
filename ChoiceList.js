@@ -17,14 +17,15 @@ export default ChoiceList = (props) => (
 
 const styles = StyleSheet.create({
     container: {
-        alignSelf: 'stretch'
+        width: '95%',
+        height: '20%',
+        justifyContent: 'space-between'
     },
     text: {
         color: 'white',
         fontSize: 20,
         backgroundColor: 'darkgrey',
         padding: 10,
-        margin: 10,
         borderRadius: 10,
         textAlign: 'center',
         borderColor: '#FFFFFF',

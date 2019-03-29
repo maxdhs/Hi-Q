@@ -9,7 +9,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <TabNavigator screenProps={{ ...this.state, handlePress: this.handlePress, checkCorrect: this.checkCorrect, toggleComplete: this.toggleComplete }} />
+      <TabNavigator screenProps={{ ...this.state, handlePress: this.handlePress, checkCorrect: this.checkCorrect, toggleComplete: this.toggleComplete, nextHaikuButtonHandler:this.nextHaikuButtonHandler }} />
     );
   }
 
@@ -35,7 +35,7 @@ export default class App extends React.Component {
       const value = await AsyncStorage.getItem('savedState');
       if (value !== null) {
         let savedState = JSON.parse(value)
-        this.setState(savedState)
+        // this.setState(savedState)
       }
     } catch (error) {
      console.log(error)
@@ -59,16 +59,23 @@ export default class App extends React.Component {
     }
   }
 
+  nextHaikuButtonHandler = () => {
+    this.setState({
+      selectedLine: 0,
+      selectedHaiku: this.state.selectedHaiku + 1,
+      isShowingTranslation: false
+    })
+  }
+
   toggleComplete = () => {
     let key = this.state.selectedHaiku
-    let haikus = { ...this.state.haiku };
-    let haiku = { ...haikus[key] };
-    haiku.isCompleted = true;
-    haikus[key] = haiku;
+    let haikus = { ...this.state.haiku }
+    let haiku = { ...haikus[key] }
+    haiku.isCompleted = true
+    haikus[key] = haiku
     this.setState({
       haiku: haikus,
-      selectedLine: 0,
-      selectedHaiku: this.state.selectedHaiku + 1
+      isShowingTranslation: true
     })
   }
 }

@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'darkgrey',
         padding: 5,
     },
     greyText: {
