@@ -1,18 +1,23 @@
 import React from 'react'
-import { Text, View, StyleSheet } from 'react-native'
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native'
 
-export default HaikuLine = (props) => (
-        <View style={styles.lineContainer}>
+export default HaikuLine = (props) => {
+    return (
+    <View style={styles.lineContainer}>
+        <Text
+            style={styles.lineNumber}>
+            {props.selectedHaiku + 1}:{props.lineNumber + 1}
+        </Text>
+        <TouchableOpacity onPress={() => props.handlePress(props.lineNumber)}>
             <Text
-                style={props.selectedLine > props.lineNumber ? styles.greenNumber : styles.whiteNumber}>
-                {props.selectedHaiku + 1}:{props.lineNumber + 1}
-            </Text>
-            <Text
-                style={props.selectedLine === props.lineNumber ? styles.whiteText : styles.greyText}>
+                style={props.selectedLine === props.lineNumber || props.isShowingTranslation ? styles.whiteText : styles.greyText}>
                 {props.haikuLines[props.lineNumber]}
             </Text>
-        </View>
+        </TouchableOpacity>
+        <Text style={styles.checkEmoji}>{props.selectedLine > props.lineNumber || props.isShowingTranslation ? '✔️' : null}</Text>
+    </View>
 )
+}
 
 const styles = StyleSheet.create({
     lineContainer: {
@@ -28,23 +33,16 @@ const styles = StyleSheet.create({
     whiteText: {
         color: 'white',
         fontSize: 50,
-        fontWeight: 'bold',
     },
-    greenText: {
-        color: 'green',
+    lineNumber: {
+        fontSize: 13,
+        margin: 10,
+        backgroundColor: 'black',
+        color: 'white'
+    },
+    checkEmoji: {
         fontSize: 50,
-        fontWeight: 'bold',
-    },
-    greenNumber: {
-        color: 'white',
-        fontSize: 15,
-        backgroundColor: 'green',
-        margin: 10,
-    },
-    whiteNumber: {
-        color: 'white',
-        fontSize: 15,
-        margin: 10,
-        borderRadius: 1
+        color: 'green',
+        paddingLeft: 20
     }
 })

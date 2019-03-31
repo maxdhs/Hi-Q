@@ -35,15 +35,15 @@ export default class App extends React.Component {
       const value = await AsyncStorage.getItem('savedState');
       if (value !== null) {
         let savedState = JSON.parse(value)
-        // this.setState(savedState)
+        this.setState(savedState)
       }
     } catch (error) {
      console.log(error)
     }
   }
 
-  handlePress = () => {
-    Audio.Sound.createAsync(this.state.haiku[this.state.selectedHaiku].soundsArray[this.state.selectedLine], { shouldPlay: true })
+  handlePress = (lineNumber) => {
+    Audio.Sound.createAsync(this.state.haiku[this.state.selectedHaiku].soundsArray[lineNumber], { shouldPlay: true })
   }
 
   checkCorrect = (userChoice) => {

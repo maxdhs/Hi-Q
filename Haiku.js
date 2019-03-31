@@ -4,9 +4,9 @@ import HaikuLine from './HaikuLine'
 
 export default Haiku = (props) => (
     <View style={styles.container}>
-        <HaikuLine selectedLine={props.selectedLine} lineNumber={0} haikuLines={props.haikuLines} selectedHaiku={props.selectedHaiku} />
-        <HaikuLine selectedLine={props.selectedLine} lineNumber={1} haikuLines={props.haikuLines} selectedHaiku={props.selectedHaiku} />
-        <HaikuLine selectedLine={props.selectedLine} lineNumber={2} haikuLines={props.haikuLines} selectedHaiku={props.selectedHaiku} />
+        <HaikuLine {...props} lineNumber={0}/>
+        <HaikuLine {...props} lineNumber={1} />
+        <HaikuLine {...props} lineNumber={2} />
     </View>
 )
 

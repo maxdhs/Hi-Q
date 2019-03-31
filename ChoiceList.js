@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native'
+import { Text, View, StyleSheet, TouchableOpacity, Fade } from 'react-native'
 
 export default ChoiceList = (props) => (
     <View style={styles.container}>

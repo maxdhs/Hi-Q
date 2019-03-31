@@ -1,3 +1,5 @@
+import randomPhrase from './randomPhrase'
+
 export const initialState = {
   selectedHaiku: 0,
   selectedLine: 0,
@@ -5,9 +7,9 @@ export const initialState = {
   haiku: {
     0: {
       optionsArray: {
-        0: ['cat is drinking', 'cat is eating', 'cat is sleeping', 2],
-        1: ['catng', 'cat is ing', 'cat l4eeping', 2],
-        2: ['cat is king', 'c2at is eatng', 'ca3t leeping', 0]
+        0: [randomPhrase(), 'mountain stream​ / in', randomPhrase(), 1],
+        1: [randomPhrase(), randomPhrase(), 'alone / hair / washing', 2],
+        2: ['god / to know', randomPhrase(), randomPhrase(), 0]
       },
       isCompleted: false,
       soundsArray: [require('./assets/0-0.mp3'), require('./assets/0-1.mp3'), require('./assets/0-2.mp3')],
@@ -18,27 +20,26 @@ export const initialState = {
       },
       emoji: '🗻',
       name: 'Mountain',
-      literalTranslation: ['cat is above', 'dark red', 'was not blue'],
-      poeticTranslation: ['god knows', 'in a mountain stream', 'a woman alone washing her hair']
+      literalTranslation: ['mountain stream​ / in', 'alone / hair / washing', 'god / to know'],
+      poeticTranslation: 'god knows in a mountain stream a woman alone washing her hair'
     },
     1: {
       optionsArray: {
-        0: ['cat is drinking', 'cat is eating', 'cat is sleeping', 2],
-        1: ['catng', 'cat is ing', 'cat l4eeping', 2],
-        2: ['cat is king', 'c2at is eatng', 'ca3t leeping', 0]
+        0: [randomPhrase(), randomPhrase(), 'wind / to blow', 2],
+        1: [randomPhrase(), 'death / come / to receive', randomPhrase(), 1],
+        2: ['hearing', randomPhrase(), randomPhrase(), 0]
       },
       isCompleted: false,
-      soundsArray:[require('./assets/0-0.mp3'), require('./assets/0-1.mp3'), require('./assets/0-2.mp3')],
+      soundsArray: [require('./assets/1-0.mp3'), require('./assets/1-1.mp3'), require('./assets/1-2.mp3')],
       haikuLines: {
-        0: '草の戸も',
-        1: '住替る代ぞ',
-        2: 'ひなの家'
+        0: '風が吹く',
+        1: '仏来給ふ',
+        2: 'けはひあり'
       },
-      emoji: '🌙',
-      name: 'Dream',
-      literalTranslation: ['cat is above', 'dark red', 'was not blue'],
-      poeticTranslation: ['the pond', 'is beautiful', 'in the march waters']
+      emoji: '💀',
+      name: 'Death',
+      literalTranslation: ['wind / to blow', 'death / come / to receive', 'hearing'],
+      poeticTranslation: 'a wind blows and I hear the soul of the deceased coming'
     },
-  },
-
+  }
 }
