@@ -3,8 +3,9 @@ import { Text, View, StyleSheet, TouchableOpacity } from 'react-native'
 
 export default HeaderEmoji = (props) => (
     <View style={styles.container}>
-        <TouchableOpacity  onPress={() => props.handlePress(props.selectedLine)}>
+        <TouchableOpacity onPress={() => props.handlePress(props.selectedLine)}>
             <Text
+                adjustsFontSizeToFit={true}
                 style={styles.emoji}>
                 {props.haiku[props.selectedHaiku].emoji}
             </Text>
@@ -24,6 +25,6 @@ const styles = StyleSheet.create({
         borderWidth: StyleSheet.hairlineWidth,
     },
     emoji: {
-        fontSize: 100,
+        fontSize: 54,
     }
 })

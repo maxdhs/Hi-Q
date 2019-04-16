@@ -1,8 +1,7 @@
 import React from 'react'
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native'
-import { Constants } from 'expo'
+import { Text, StyleSheet } from 'react-native'
 
-export default CompletedTitle = (props) => (
+export default CompletedTitle = () => (
     <Text
         style={styles.text}>
         All Haikus
@@ -15,7 +14,7 @@ const styles = StyleSheet.create({
         borderBottomWidth: StyleSheet.hairlineWidth,
         fontSize: 30,
         fontWeight: 'bold',
-        padding: 20
+        padding: "4%"
     },
 
 })

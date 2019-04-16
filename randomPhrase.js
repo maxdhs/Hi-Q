@@ -1,6 +1,51 @@
-export default randomPhrase = () => {
-    return choices[Math.floor(Math.random() * choices.length)]
-}
+export default (randomPhrase = () => {
+  return choices[Math.floor(Math.random() * choices.length)];
+});
 
-const choices = ['mountain stream​ / in', 'alone / hair / washing', 'god / to know', 'wind / to blow', 'death / come / to receive', 'hearing']
-
+const choices = [
+  "mountain stream​ / in",
+  "alone / hair / washing",
+  "god / to know",
+  "wind / to blow",
+  "death / come / to receive",
+  "hearing",
+  "spider / to / birth",
+  "web / if not weaving",
+  "bad",
+  "grass / picking",
+  "today / 's / field / grief",
+  "night rain / to come",
+  "white / rose",
+  "so called / even if",
+  "red / faint",
+  "you / and / I",
+  "lie / as / if delving into",
+  "hearing",
+  "spider / to / birth",
+  "web / if not weaving",
+  "bad / is it?",
+  "grass / picking",
+  "today / 's / field / grief",
+  "night rain / to come",
+  "white / rose",
+  "so called / even if",
+  "red / faint",
+  "spring breeze​ / and",
+  "fighting spirit / embracing",
+  "hill / on / to stand",
+  "duck​ / 's / bill / from",
+  "dripping",
+  "spring / 's / mud",
+  "going / spring / and",
+  "bird / cry / fish / 's ",
+  "eyes / tears",
+  "summer / grass / and",
+  "soldiers",
+  "dream / 's / remains",
+  "tranquility / and",
+  "stone / to / to permeate",
+  "cicada / 's / cry",
+  "old / pool / and",
+  "frog / to jump in",
+  "water / 's / sound"
+];

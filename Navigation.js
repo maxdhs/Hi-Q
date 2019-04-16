@@ -16,9 +16,9 @@ const TabNavigator = createBottomTabNavigator(
                 const { routeName } = navigation.state;
                 let iconName;
                 if (routeName === 'Haiku') {
-                    iconName = <Icons.SimpleLineIcons name="book-open" size={22} />
+                    iconName = <Icons.SimpleLineIcons name="book-open" size={20} />
                 } else if (routeName === 'Completed') {
-                    iconName = <Icons.FontAwesome name="check-square" size={22} />
+                    iconName = <Icons.FontAwesome name="check-square" size={20} />
                 }
                 return iconName
             },
